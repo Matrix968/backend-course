@@ -1,6 +1,6 @@
 import serviceAccount from "./serviceAccount.json" with { type: "json" };
 import admin from "firebase-admin"
-const admin = require('firebase-admin');
+
 
 // 1. Fix the private key newline issue first
 const privateKey = process.env.FIREBASE_PRIVATE_KEY 
@@ -16,7 +16,4 @@ admin.initializeApp({
   }),
 });
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-}); console.log("database connected...")
 export default admin;
